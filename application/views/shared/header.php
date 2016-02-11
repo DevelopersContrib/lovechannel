@@ -524,6 +524,19 @@ text-align:center;
     background: #00d9ff;
 }
 </style>
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.stats.numberchallenge.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId',  60429]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//www.stats.numberchallenge.com/piwik.php?idsite=60429" style="border:0;" alt="" /></p></noscript>
 </head>
 
 <body id="page-top">

@@ -461,11 +461,11 @@
 					</div>
 					<div class="col-md-6 col-md-offset-3 step3 ">
 						<div class="form-group">
-							<input type="text" class="form-control input-lg" placeholder="Your Country *" name="country_name" />
+							<input type="text" class="form-control input-lg" placeholder="Recipient Country *" name="country_name" />
 							<small class="country_name-msg"></small>
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control input-lg" placeholder="Your Complete Address *" name="address" />
+							<input type="text" class="form-control input-lg" placeholder="Recipient Complete Address *" name="address" />
 							<small class="address-msg"></small>
 						</div>
 						<div class="form-group">
