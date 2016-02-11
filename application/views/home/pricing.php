@@ -455,6 +455,7 @@ margin-top:20px;
 </style>
 
 
+
 	<section id="pricing">
 		<div class="container">
 			<div class="row">
@@ -479,7 +480,18 @@ margin-top:20px;
 													<span class="glyphicon glyphicon-heart"></span> Message to recipient
 											</li>
 									</ul>
-									<div class="panel-footer"> <a class="btn btn-lg btn-block btn-danger" href="#">Get Package 1</a> </div>
+									<!-- Modal -->
+									<div id="modal-package1" class="modalDialog" style="text-align:center;">
+										<div>	<a href="#close" title="Close" class="close">X</a>
+											<br>
+											<?php
+												$package1 = str_replace("fblogin","fblogin/booking/package/1",$login_url);
+											?>
+											<p><a href="<?php echo $package1?>" class="btn btn-primary">Connect with <i class="fa fa-facebook-square"></i></a></p>
+										</div>
+									</div>
+									<!-- /Modal -->	
+									<div class="panel-footer"> <a class="btn btn-lg btn-block btn-danger" href="<?=($this->session->userdata('logged_in')===false)?"#modal-package1":"/booking/package/1"?>">Get Package 1</a> </div>
 							</div>
 					</div>
 					<div class="col-md-4">
@@ -503,7 +515,18 @@ margin-top:20px;
 													<span class="glyphicon glyphicon-heart"></span> Message to recipient
 											</li>
 									</ul>
-									<div class="panel-footer"> <a class="btn btn-lg btn-block btn-danger" href="#">Get Package 2</a> </div>
+									<!-- Modal -->
+									<div id="modal-package2" class="modalDialog" style="text-align:center;">
+										<div>	<a href="#close" title="Close" class="close">X</a>
+											<br>
+											<?php
+												$package2 = str_replace("fblogin","fblogin/booking/package/2",$login_url);
+											?>
+											<p><a href="<?php echo $package2?>" class="btn btn-primary">Connect with <i class="fa fa-facebook-square"></i></a></p>
+										</div>
+									</div>
+									<!-- /Modal -->	
+									<div class="panel-footer"> <a class="btn btn-lg btn-block btn-danger" href="<?=($this->session->userdata('logged_in')===false)?"#modal-package2":"/booking/package/2"?>">Get Package 2</a> </div>
 							</div>
 					</div>
 					<div class="col-md-4">
@@ -526,7 +549,18 @@ margin-top:20px;
 													<span class="glyphicon glyphicon-heart"></span> Message to recipient
 											</li>
 									</ul>
-									<div class="panel-footer"> <a class="btn btn-lg btn-block btn-danger" href="#">Get Package 3</a> </div>
+									<!-- Modal -->
+									<div id="modal-package3" class="modalDialog" style="text-align:center;">
+										<div>	<a href="#close" title="Close" class="close">X</a>
+											<br>
+											<?php
+												$package3 = str_replace("fblogin","fblogin/booking/package/3",$login_url);
+											?>
+											<p><a href="<?php echo $package3?>" class="btn btn-primary">Connect with <i class="fa fa-facebook-square"></i></a></p>
+										</div>
+									</div>
+									<!-- /Modal -->	
+									<div class="panel-footer"> <a class="btn btn-lg btn-block btn-danger" href="<?=($this->session->userdata('logged_in')===false)?"#modal-package3":"/booking/package/3"?>">Get Package 3</a> </div>
 							</div>
 					</div>
 					
@@ -597,18 +631,4 @@ Swift code: BNORPHMM (for payment fr abroad)</p>
 	</section>
 	
  
-
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
-    <script src="js/wow.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/creative.js"></script>
   <?php $this->load->view('shared/footer'); ?>
