@@ -356,6 +356,30 @@
 				        }
 				    });
 				});
+				<?php
+					if(!empty($package) && $package=="1"){
+						?>
+						$('#service_id').val(1);
+						$('#service_id').trigger('change');
+						$('#online_serenade_type').val('messenger');
+						$('#online_serenade_type').trigger('change');
+						<?php
+					}else if(!empty($package) && $package=="2"){
+						?>
+						$('#service_id').val(1);
+						$('#service_id').trigger('change');
+						$('#online_serenade_type').val('videogram');
+						$('#online_serenade_type').trigger('change');
+						<?php
+					}else if(!empty($package) && $package=="3"){
+						?>
+						$('#service_id').val(2);
+						$('#service_id').trigger('change');
+						<?php
+					}
+				?>
+				
+				
 			});
 		</script>
 		<style>
