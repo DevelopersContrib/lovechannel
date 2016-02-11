@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+			body{
+				font-family: 'Open Sans', sans-serif;
+				background-color: #f3f4f5;
+			}
+			.fnt-300{
+				font-weight: 300;
+			}
+			.fnt-400{
+				font-weight: 400;
+			}
+			.fnt-600{
+				font-weight: 600;
+			}
+			.fnt-700{
+				font-weight: 700;
+			}
+			.wrap-form-header-container{
+				position: relative;
+				padding :50px 0;
+				border-bottom: 1px solid #ddd;
+				font-weight: 300;
+				background-color: #fff;
+			}
+			.wrap-form-header-container .ttle{
+				font-weight: 300;
+			}
+
+			/* Form Content */
+			.wrap-form-content-container{
+				position: relative;
+				padding:50px 0;
+				margin-bottom: 50px;
+			}
+			.wrap-form-content-container .checkbox-inline + .checkbox-inline,.wrap-form-content-container .radio-inline + .radio-inline{
+				margin-right: 10px;
+				margin-left: auto;
+			}
+			.wrap-check-box-container{
+				background-color: #fff;
+				padding:15px;
+			}
+			/* Filters Success and Error */
+			.wrap-form-content-container .form-group{
+				padding:5px 5px 0;
+				position: relative;
+			}
+			.form-group.has-error{
+				background-color: #ff4c4c;
+				border-radius: 5px;
+			}
+			.has-error .form-control {
+				border-color: #a94442;
+				box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+			}
+			.form-group.has-error small.help-block{
+				color: #fff;
+				padding: 0 10px 5px;
+				font-weight: 700;
+			}
+			.form-group.success:after {
+				font-family: "Glyphicons Halflings";
+				content: "\e013";
+				color: #44b27b;
+				position: absolute;
+				right: 20px;
+				top: 12px;
+				font-size: 1.5em;
+			}
+			.form-group.has-error small.help-block {
+				color: #fff;
+				font-weight: 700;
+				padding: 0 10px 5px;
+			}
+
+			.step2,.step3,.step4,.step5{
+				display: none;
+			}
