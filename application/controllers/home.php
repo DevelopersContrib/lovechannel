@@ -45,8 +45,16 @@ class Home extends CI_Controller {
                   );
 
                  $this->session->set_userdata($newdata);
-			 
-		   	 redirect(base_url().'home');
+			
+			$callbackurl = $this->uri->segment(3);			
+			
+			if(empty($callbackurl))
+				redirect(base_url().'home');
+			else{
+				$callbackurl = $callbackurl."/".$this->uri->segment(4);
+				$callbackurl = $callbackurl."/".$this->uri->segment(5);
+				redirect(base_url().$callbackurl);
+			}
 		}
 	}
 	

@@ -21,6 +21,13 @@ class Booking extends CI_Controller {
 		$this->load->view('booking/index',$data);
 	}
 	
+	public function package()
+	{
+		$data['package'] = $this->uri->segment(3);
+		$data['aons'] = $this->serviceaddons->getall(); 
+		$this->load->view('booking/index',$data);
+	}
+	
 	public function save()
 	{
 		$success = false;
