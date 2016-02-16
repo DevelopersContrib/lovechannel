@@ -10,8 +10,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css' />
-		<link rel="stylesheet" href="css/dataTables.css">
-		<link rel="stylesheet" href="css/admin.css">
+		<link rel="stylesheet" href="/css/dataTables.css">
+		<link rel="stylesheet" href="/css/admin.css">
 
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -25,7 +25,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
-		<script src="js/datatables.js"></script>
+		<script src="/js/datatables.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				function setHeight() {

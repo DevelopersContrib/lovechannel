@@ -19,14 +19,27 @@ $(document).ready(function(){
 			                 bSortable: false,
 			                 mRender: function (source, type, val) {
 			                	 var html = '';
+			                	 var snew = '';
+			                	 var spaid = '';
+			                	 var sdone = '';
 				                 if (val[7] == 'new'){
 				                	 html +='<span class="label label-primary">new</span>';
+				                	 snew = 'selected';
 				                 }else if (val[7] == 'paid'){
 					                html += '<span class="label label-success">paid</span>'; 
+					                spaid = 'selected';
 				                 } else if (val[7] == 'done'){
-				                	html += '<span class="label label-info">done</span>'; 
+				                	html += '<span class="label label-info">done</span>';
+				                	sdone = 'selected';
+				                	 
 				                 }
-				                 
+
+				                 html += '<br><br><div class="form-group">';
+				                 html += '<select class="form-control booking_status" id="booking_'+val[0]+'">';
+				                 html += '<option value="new" '+snew+'>new</option>';
+				                 html += '<option value="paid" '+spaid+'>paid</option>';
+				                 html += '<option value="done" '+sdone+'>done</option>';
+				                 html += '</select>';
 				                 return html; 
 				                 }
 			             },
@@ -35,9 +48,15 @@ $(document).ready(function(){
 			                 mRender: function (source, type, val) { 
 				                 var html = '<div class="btn-group btn-group-sm" role="group">';
 				                 html += '<a href="javascript:;" class="btn btn-primary"  onclick="showdetails('+val[0]+')"><i class="fa fa-book"></i>Details</a>';
-				                 if (val[5]==null){
-				                  html += '<a href="javascript:;" class="btn btn-primary"  onclick="showassign('+val[0]+')"><i class="fa fa-music"></i>Assign Musician</a>';
+
+				                 if (val[7] != 'done'){
+					                 if (val[5]==null){
+					                   html += '<a href="javascript:;" class="btn btn-primary"  onclick="showassign('+val[0]+')"><i class="fa fa-music"></i>Assign Musician</a>';
+					                 }else {
+					                   html += '<a href="javascript:;" class="btn btn-primary"  onclick="showassign('+val[0]+')"><i class="fa fa-music"></i>Change Musician</a>';
+					                 }
 				                 }
+
 				                 html += '<a href="javascript:;" class="btn btn-danger" onclick="showdelete('+val[0]+')"><i class="fa fa-trash"></i>Delete</a>';
 				                 html += '</div>';
 				                 return html;//'<a href="javascript:void(0)" onclick="editctype('+val[0]+')"><i class="ui-tooltip fa fa-pencil" style="font-size: 18px;" data-original-title="Edit"></i></a>&nbsp;<a href="javascript:void(0)" onclick="confirmdeletectype('+val[0]+')"><i class="ui-tooltip fa fa-trash-o"  style="font-size: 18px;" data-original-title="Delete"></i></a>'; 
@@ -45,6 +64,38 @@ $(document).ready(function(){
 			             }
 			        ]
 		} );
+
+	 $( "body" ).on( "change", "#musician", function() {
+		  	var m_id = $(this).val();
+		  	var booking_id = $('#musician_booking').val();
+		  	$.post('/admin/assignmusician',{
+					m_id:m_id,
+					booking_id:booking_id
+				},
+				function(data){
+					$("#myModal").modal('hide'); 
+					$Btable.fnDraw();
+			});
+		    
+		});
+
+	 $( "body" ).on( "change", ".booking_status", function() {
+		  	var attrid = $(this).attr('id');
+		  	var booking_id = attrid.replace('booking_','');
+		  	var status = $(this).val();
+		  	$.post('/admin/changestatus',{
+					booking_id:booking_id,
+					status:status
+				},
+				function(data){
+					$("#myModal").modal('hide'); 
+					$Btable.fnDraw();
+			});
+		    
+		});	
+
+	 
+	 
 });
 
 function showdetails(id){
